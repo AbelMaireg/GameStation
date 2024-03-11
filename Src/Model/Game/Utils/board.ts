@@ -176,8 +176,9 @@ class Board {
         
     };
 
-    public async save(): Promise<void> {
-       await this._database.saveBoard(this); 
+    public async save(): Promise<Boolean> {
+        let result: Boolean = await this._database.saveBoard(this); 
+        return result;
     };
 
     public load(): void {

@@ -6,7 +6,7 @@ describe('Board', () => {
     let board: Board;
 
     beforeEach(() => {
-        board = new Board("abelmaire", "1", 4, 4);
+        board = new Board("abelmaireg", "1", 4, 4);
     });
 
     it('constructor creates the board with the correct dimensions', () => {
@@ -47,4 +47,14 @@ describe('Board', () => {
         expect(board.getFieldAtPosition(new Grid(3, 0)).isOpen).toBe(false);
         
     });
+
+    // it('returns true for saving board to a database', async () => {
+    //     board.putMineAt(new Grid(0, 3));
+    //     board.putMineAt(new Grid(3, 0));
+    //     board.putMineAt(new Grid(3, 3));
+    //     board.traverseZeros(new Grid(0, 0));
+
+    //     let status = await board.save();
+    //     expect(status).toBe('true');
+    // })
 });

@@ -38,7 +38,7 @@ class Database {
 		}
 	}
 
-	public async saveBoard(board: Board): Promise<void> {
+	public async saveBoard(board: Board): Promise<Boolean> {
 		const connection = await this.pool.getConnection();
 		try {
 			board.fields.forEach((row) => {
@@ -48,9 +48,12 @@ class Database {
 			});
 		} catch (error) {
 			throw error;
+            return false;
 		} finally {
 			connection.release();
-		}
+		};
+
+        return true;
 	}
 }
 

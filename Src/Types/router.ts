@@ -1,5 +1,4 @@
-import { Router, Request, Response } from 'express';
-import Database from '../Database/database'
+import { Router } from 'express';
 
 abstract class _Router {
   protected router: Router;

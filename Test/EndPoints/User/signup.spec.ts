@@ -1,12 +1,11 @@
 import { playGround } from '../../../Src/app';
-import Database from '../../../Src/Model/Database/database';
+import Service from '../../../Src/Service/index';
 
 import request from 'supertest'
 
 describe('API: signup', () => {
     beforeAll(async () => {
-        const database: Database = new Database('localhost', 'root', '6006174009010', 'GameStation');
-        await database.executeQuery('CALL resetDatabase()');
+        await Service.gameStation.executeQuery('CALL resetDatabase()');
     });
 
     it('should return unsuppoted field', async () => {
